@@ -3,7 +3,7 @@
 \usepackage{amsmath}
 \usepackage{tikz}
 \usetikzlibrary{calc}
-\usepackage{cancel}
+\usepackage[thicklines]{cancel}
 \usepackage{makecell}
 \usepackage{multicol}
 
@@ -70,6 +70,19 @@
 
 \tikzposterlatexaffectionproofoff
 
+\definenotestyle{notestyle}{
+  targetoffsetx=0pt, targetoffsety=0pt, angle=90, radius=3cm,
+  width=6cm, connection=false, rotate=0, roundedcorners=20, linewidth=1pt,
+  innersep=1cm
+}{
+  \ifNoteHasConnection
+  \draw[thick] (notecenter) -- (notetarget) node{$\bullet$};
+  \fi
+  \draw[draw=notebgcolor,fill=notebgcolor,rotate=\noterotate,rounded corners=\noteroundedcorners]
+  (notecenter.south west) rectangle (notecenter.north east);
+}
+\usenotestyle{notestyle}
+
 \begin{document}
 
 \maketitle
@@ -81,17 +94,17 @@
     \Large
     \begin{minipage}{0.3\linewidth}
       \vspace{1cm}
-      $k$ : aantal beslissingen                                                            \\
-      $n$ : aantal keuzes                                                                  \\
+      $k$ : aantal beslissingen                                                           \\
+      $n$ : aantal keuzes                                                                 \\
     \end{minipage}
     \begin{minipage}{0.5\linewidth}
       \begin{center}
         \begin{tabular}{c|c|c}
-          & \xcancel{Herhaling}                             & Herhaling \\
+                             & \xcancel{Herhaling}                            & Herhaling \\
           \hline
-          Volgorde           & \makecell{Variatie $V^k_n$                                  \\ Permutatie $P_n$} & Herhalingsvariatie $\bar{V}^k_n$  \\
+          Volgorde           & \makecell{Variatie $V^k_n$ \\ Permutatie $P_n$} & Herhalingsvariatie $\bar{V}^k_n$  \\
           \hline
-          \xcancel{Volgorde} & Combinatie $C^k_n$                              & Herhalingscombinatie
+          \xcancel{Volgorde} & Combinatie $C^k_n$                             & Herhalingscombinatie
         \end{tabular}
       \end{center}
     \end{minipage}
@@ -104,13 +117,11 @@
       C^k_n & = {n! \over k! \cdot (n-k)!} & \bar{C}^k_n & = C^k_{n+k-1}
     \end{align*}
   }
-  \note[targetoffsetx=-22cm, targetoffsety=-3cm, angle=90, radius=3cm,
-  width=6cm, linewidth=.2cm,
-  roundedcorners=20, innersep=1cm]{\centering$P_n=n!$}
+  \note[targetoffsetx=-22cm, targetoffsety=-3cm, width=6cm]{\centering$P_n=n!$}
   \block{Faculteiten}{
     \Huge
     \begin{align*}
-      n!&=n\cdot(n-1)\cdot \cdots \cdot 2\cdot1\\
+      n!&=n\cdot(n-1)\cdot \ldots \cdot 2\cdot1\\
       0!&=1
     \end{align*}
   }
@@ -123,7 +134,7 @@
   \block{Anagrammen}{
     \huge
     \centering
-    $P^{^{n_1,n_2,\dots,n_k}}_n = \dfrac{n!}{n_1!\cdot n_2!\cdot \cdots \cdot n_k!}$ \qquad \large of eleganter\qquad \Large   $P_{n_1,\dots,n_k} = \dfrac{\left(\sum_{i=1}^k n_i\right)!}{\prod_{i=1}^k n_i!}$
+    $P^{^{n_1,n_2,\dots,n_k}}_n = \dfrac{n!}{n_1!\cdot n_2!\cdot \ldots \cdot n_k!}$ \qquad \large of eleganter \qquad \Large   $P_{n_1,\dots,n_k} = \dfrac{\left(\sum_{i=1}^k n_i\right)!}{\prod_{i=1}^k n_i!}$
   }
 
   \column{0.4}
@@ -164,6 +175,10 @@
       \end{tabular}
     \end{center}
   }
+  \note[targetoffsetx=9.5cm, targetoffsety=4cm, angle=90, radius=3cm,
+  width=14cm, linewidth=.2cm,
+  roundedcorners=20, innersep=1cm]
+  {\Large\centering$\displaystyle{n \choose k} = \dfrac{n!}{k!\cdot\left(n-k\right)!}$}
 \end{columns}
 
 \end{document}
