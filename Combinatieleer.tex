@@ -1,0 +1,169 @@
+\documentclass[a1paper,landscape,25pt]{tikzposter}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{cancel}
+\usepackage{makecell}
+\usepackage{multicol}
+
+\newcommand{\tikzmark}[2]{\tikz[baseline,anchor=base,remember picture] \node (#1) {#2};}
+
+\usepackage{graphicx}
+\usepackage{calc}
+\newlength{\depthofsumsign}
+\setlength{\depthofsumsign}{\depthof{$\sum$}}
+\newlength{\totalheightofsumsign}
+\newlength{\heightanddepthofargument}
+
+\newcommand{\nsum}[1][1.4]{% only for \displaystyle
+    \mathop{%
+        \raisebox
+            {-#1\depthofsumsign+1\depthofsumsign}
+            {\scalebox
+                {#1}
+                {$\displaystyle\sum$}%
+            }
+    }
+}
+\newcommand{\resum}[1]{%
+    \def\s{#1}
+    \mathop{
+        \mathpalette\resumaux{#1}
+    }
+}
+
+\newcommand{\resumaux}[2]{% internally
+    \sbox0{$#1#2$}
+    \sbox1{$#1\sum$}
+    \setlength{\heightanddepthofargument}{\wd0+\dp0}
+    \setlength{\totalheightofsumsign}{\wd1+\dp1}
+    \def\quot{\DivideLengths{\heightanddepthofargument}{\totalheightofsumsign}}
+    \nsum[\quot]%
+}
+
+% http://tex.stackexchange.com/a/6424/16595
+\makeatletter
+\newcommand*{\DivideLengths}[2]{%
+  \strip@pt\dimexpr\number\numexpr\number\dimexpr#1\relax*65536/\number\dimexpr#2\relax\relax sp\relax
+}
+\makeatother
+
+%\makeatletter
+%\newcommand\HUGE{\@setfontsize\Large{60}{100}}
+%\makeatother
+
+\settitle{
+  \vspace{-5cm}
+  \centering \vbox{
+\@titlegraphic \\[\TP@titlegraphictotitledistance] \centering
+\color{titlefgcolor} {\bfseries \fontsize{90}{100} \sc \@title \par}
+\vspace{1em}
+}}
+
+\title{Combinatieleer}
+
+\addtolength{\jot}{1em}
+
+\usetheme{Basic}
+\usecolorstyle[colorPalette=BrownBlueOrange]{Spain}
+
+\tikzposterlatexaffectionproofoff
+
+\begin{document}
+
+\maketitle
+
+\begin{columns}
+  \column{0.6}
+
+  \block{Telproblemen}{
+    \Large
+    \begin{minipage}{0.3\linewidth}
+      \vspace{1cm}
+      $k$ : aantal beslissingen                                                            \\
+      $n$ : aantal keuzes                                                                  \\
+    \end{minipage}
+    \begin{minipage}{0.5\linewidth}
+      \begin{center}
+        \begin{tabular}{c|c|c}
+          & \xcancel{Herhaling}                             & Herhaling \\
+          \hline
+          Volgorde           & \makecell{Variatie $V^k_n$                                  \\ Permutatie $P_n$} & Herhalingsvariatie $\bar{V}^k_n$  \\
+          \hline
+          \xcancel{Volgorde} & Combinatie $C^k_n$                              & Herhalingscombinatie
+        \end{tabular}
+      \end{center}
+    \end{minipage}
+  }
+
+  \block{Formules}{
+    \Huge
+    \begin{align*}
+      V^k_n & = {n! \over (n-k)!}          & \bar{V}^k_n & = n^k \\
+      C^k_n & = {n! \over k! \cdot (n-k)!} & \bar{C}^k_n & = C^k_{n+k-1}
+    \end{align*}
+  }
+  \note[targetoffsetx=-22cm, targetoffsety=-3cm, angle=90, radius=3cm,
+  width=6cm, linewidth=.2cm,
+  roundedcorners=20, innersep=1cm]{\centering$P_n=n!$}
+  \block{Faculteiten}{
+    \Huge
+    \begin{align*}
+      n!&=n\cdot(n-1)\cdot \cdots \cdot 2\cdot1\\
+      0!&=1
+    \end{align*}
+  }
+  \note[targetoffsetx=17cm, targetoffsety=-6.5cm, angle=90, radius=3cm,
+  width=16cm, linewidth=.2cm,
+  roundedcorners=20, innersep=1cm]{\large\centering$n!=\begin{cases}
+      1        &\mbox{ als } n=0\\
+      n \cdot (n-1)! &\mbox{ als } n>0
+    \end{cases}$}
+  \block{Anagrammen}{
+    \huge
+    \centering
+    $P^{^{n_1,n_2,\dots,n_k}}_n = \dfrac{n!}{n_1!\cdot n_2!\cdot \cdots \cdot n_k!}$ \qquad \large of eleganter\qquad \Large   $P_{n_1,\dots,n_k} = \dfrac{\left(\sum_{i=1}^k n_i\right)!}{\prod_{i=1}^k n_i!}$
+  }
+
+  \column{0.4}
+
+  \block{Variaties}{
+    \large
+    \begin{align*}
+      V^k_n &= n \cdot (n-1) \cdot \ldots \cdot (n-k+1)\\
+            &= \dfrac{n \cdot (n-1) \cdot \ldots \cdot (n-k+1) \, \color{gray}{ \cdot \, (n-k) \cdot \ldots \cdot 1}}{\color{gray}{(n-k) \cdot (n-k-1) \cdot \ldots \cdot 1}}\\
+            &= \dfrac{n!}{(n-k)!}
+    \end{align*}
+  }
+
+  \block{Driehoek van Pascal}{
+    \Large
+    \begin{center}
+      \setlength{\tabcolsep}{9pt}
+      \begin{tabular}{>{$}l<{$}|*{13}{c}}
+        \multicolumn{1}{l}{$n$}                                                                     \\
+        \cline{1-1}
+        0                    & 1                                                                    \\
+        1                    & 1 & 1                                                                \\
+        2                    & 1 & 2  & 1                                                           \\
+        3                    & 1 & 3  & 3  & 1                                                      \\
+        4                    & 1 & 4  & 6  & 4   & 1                                                \\
+        5                    & 1 & 5  & 10 & 10  & 5   & 1                                          \\
+        6                    & 1 & 6  & 15 & 20  & 15  & 6   & 1                                    \\
+        7                    & 1 & 7  & 21 & 35  & 35  & 21  & 7   & 1                              \\
+        8                    & 1 & 8  & 28 & 56  & 70  & 56  & 28  & 8   & 1                        \\
+        9                    & 1 & 9  & 36 & 84  & 126 & 126 & 84  & 36  & 9   & 1                  \\
+        10                   & 1 & 10 & 45 & 120 & 210 & 252 & 210 & 120 & 45  & 10  & 1            \\
+        11                   & 1 & 11 & 55 & 165 & 330 & 462 & 462 & 330 & 165 & 55  & 11 & 1       \\
+        12                   & 1 & 12 & 66 & 220 & 495 & 792 & 924 & 792 & 495 & 220 & 66 & 12 & 1  \\
+        \hline
+        \multicolumn{1}{l}{} & 0 & 1  & 2  & 3   & 4   & 5   & 6   & 7   & 8   & 9   & 10 & 11 & 12 \\
+        \cline{2-14}
+        \multicolumn{1}{l}{} & \multicolumn{12}{c}{$k$}
+      \end{tabular}
+    \end{center}
+  }
+\end{columns}
+
+\end{document}
