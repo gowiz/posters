@@ -6,6 +6,7 @@
 \usepackage[thicklines]{cancel}
 \usepackage{makecell}
 \usepackage{multicol}
+\usepackage{tabu}
 
 \newcommand{\tikzmark}[2]{\tikz[baseline,anchor=base,remember picture] \node (#1) {#2};}
 
@@ -58,7 +59,7 @@
   \centering \vbox{
 \@titlegraphic \\[\TP@titlegraphictotitledistance] \centering
 \color{titlefgcolor} {\bfseries \fontsize{90}{100} \sc \@title \par}
-\vspace{1em}
+\vspace{0em}
 }}
 
 \title{Combinatieleer}
@@ -99,13 +100,14 @@
     \end{minipage}
     \begin{minipage}{0.5\linewidth}
       \begin{center}
-        \begin{tabular}{c|c|c}
+        \tabulinesep2mm
+        \begin{tabu}{c|c|c}
                              & \xcancel{Herhaling}                            & Herhaling \\
           \hline
           Volgorde           & \makecell{Variatie $V^k_n$ \\ Permutatie $P_n$} & Herhalingsvariatie $\bar{V}^k_n$  \\
           \hline
-          \xcancel{Volgorde} & Combinatie $C^k_n$                             & Herhalingscombinatie
-        \end{tabular}
+          \xcancel{Volgorde} & Combinatie $C^k_n$                             & Herhalingscombinatie $\bar{C}^k_n$
+        \end{tabu}
       \end{center}
     \end{minipage}
   }
@@ -127,7 +129,7 @@
   }
   \note[targetoffsetx=17cm, targetoffsety=-6.5cm, angle=90, radius=3cm,
   width=16cm, linewidth=.2cm,
-  roundedcorners=20, innersep=1cm]{\large\centering$n!=\begin{cases}
+  roundedcorners=20, innersep=1cm]{\large \centering $n!=\begin{cases}
       1        &\mbox{ als } n=0\\
       n \cdot (n-1)! &\mbox{ als } n>0
     \end{cases}$}
