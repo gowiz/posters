@@ -57,14 +57,14 @@
           plot(\x,{(--4--\x)/2});
           \draw [line width=2.pt,dotted] (2,3)-- (4,3);
           \draw [line width=2.pt,dotted] (4,3)-- (4,4);
-          \draw (-3.8,0) node[anchor=north] {$(-\frac{b}{a},0)$};
+          \draw (-3.8,0) node[anchor=north] {$(-\frac{b}{m},0)$};
           \draw (0,2.2) node[anchor=east] {$(0,b)$};
           \draw (2.1,2.9) node[anchor=south east] {\small$(x_1,y_1)$};
           \draw (4.1,3.9) node[anchor=south east] {\small $(x_2,y_2)$};
           \draw (3,3) node[anchor=north] {$\Delta x$};
           \draw (4,3.5) node[anchor=west] {$\Delta y$};
           \draw (2.4,3.15) node[anchor=west] {\small $\theta$};
-          \draw (-6,4) node[anchor=north west] {\LARGE $f: y=ax+b$};
+          \draw (-6,4) node[anchor=north west] {\LARGE $f: y=mx+b$};
           \draw [fill=black] (-4,0) circle (2.5pt);
           \draw [fill=black] (0,2) circle (2.5pt);
           \draw [fill=black] (2,3) circle (2.5pt);
@@ -78,10 +78,6 @@
       \end{tikzpicture}
     \end{center}
   }
-  % \note[targetoffsetx=17cm, targetoffsety=-3cm, width=15cm]{
-  % \Huge
-  % $$ a^{n/m} = \sqrt[m]{a^n}$$
-  % }
   \column{0.25}
   \block{Rico}{
     \LARGE
@@ -105,10 +101,10 @@
 
   \begin{columns}
     \column{0.4}
-    \block{Rico $a$ en één punt $(x_1,y_1)$}{
+    \block{Rico $m$ en één punt $(x_1,y_1)$}{
       \LARGE
       \begin{align*}
-        y - y_1 &= a(x - x_1)
+        y - y_1 &= m(x - x_1)
       \end{align*}
     }
     \block{Punten $(x_1,y_1)$ en $(x_2, y_2)$}{
