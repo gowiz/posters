@@ -85,7 +85,7 @@
   \block{MP2}{
     \Huge
     \begin{align*}
-      (a+b)(a-b) &= a^2 - b^2
+      a^2 - b^2 &= (a+b)(a-b)
     \end{align*}
   }
 
@@ -97,6 +97,16 @@
     \end{align*}
   }
 
+  \block{MP4}{
+    \Huge
+    \begin{align*}
+      a^3-b^3 &= (a-b)(a^2+ab+b^2)\\
+      a^3+b^3 &= (a+b)(a^2-ab+b^2)
+    \end{align*}
+  }
+
+  \column{0.4}
+
   \block{Binomium van Newton}{
     \LARGE
     $$(a+b)^n=\nsum^n_{k=0}{n \choose k}a^{n-k}b^k$$
@@ -104,25 +114,23 @@
     $$\mbox{met }{n \choose k} = \dfrac{n!}{k!\cdot\left(n-k\right)!}$$
   }
 
-  \column{0.4}
-
-  \block{Bewijs van MP1}{
-    \Large
-    \begin{align*}
-      (a+b)^2 &= (a+b) \cdot (a+b)\\
-              &= (\tikzmark{a1}{a}+\tikzmark{b1}{b}) \cdot
-                (\tikzmark{a2}{a}+\tikzmark{b2}{b})\\
-              &= a \cdot a + a \cdot b + b \cdot a + b \cdot b\\
-              &= a^2 + a \cdot b + a \cdot b + b^2\\
-              &= a^2 + 2ab + b^2
-    \end{align*}
-    \begin{tikzpicture}[overlay,remember picture,distance=1.5cm]
-      \path[-,gray] (a1.north) edge (a2.north);
-      \path[-,gray] (a1.north) edge (b2.north);
-      \path[-,gray] (b1.south) edge[bend right] (a2.south);
-      \path[-,gray] (b1.south) edge[bend right] (b2.south);
-    \end{tikzpicture}
-  }
+  % \block{Bewijs van MP1}{
+  %   \Large
+  %   \begin{align*}
+  %     (a+b)^2 &= (a+b) \cdot (a+b)\\
+  %             &= (\tikzmark{a1}{a}+\tikzmark{b1}{b}) \cdot
+  %               (\tikzmark{a2}{a}+\tikzmark{b2}{b})\\
+  %             &= a \cdot a + a \cdot b + b \cdot a + b \cdot b\\
+  %             &= a^2 + a \cdot b + a \cdot b + b^2\\
+  %             &= a^2 + 2ab + b^2
+  %   \end{align*}
+  %   \begin{tikzpicture}[overlay,remember picture,distance=1.5cm]
+  %     \path[-,gray] (a1.north) edge (a2.north);
+  %     \path[-,gray] (a1.north) edge (b2.north);
+  %     \path[-,gray] (b1.south) edge[bend right] (a2.south);
+  %     \path[-,gray] (b1.south) edge[bend right] (b2.south);
+  %   \end{tikzpicture}
+  % }
 
   \block{MP1 Grafisch}{
     \begin{center}

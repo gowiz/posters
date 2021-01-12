@@ -104,7 +104,7 @@
         \begin{tabu}{c|c|c}
                              & \xcancel{Herhaling}                            & Herhaling \\
           \hline
-          Volgorde           & \makecell{Variatie $V^k_n$ \\ Permutatie $P_n$} & Herhalingsvariatie $\bar{V}^k_n$  \\
+          Volgorde           & \makecell{Variatie $V^k_n$ \\ Permutatie $P_n$} & \makecell{Herhalingsvariatie $\bar{V}^k_n$\\ Herhalingspermutatie $\bar{P}_n^{n_1, n_2, \ldots, n_k}$}  \\
           \hline
           \xcancel{Volgorde} & Combinatie $C^k_n$                             & Herhalingscombinatie $\bar{C}^k_n$
         \end{tabu}
@@ -128,8 +128,8 @@
       0!&=1
     \end{align*}
   }
-  \note[targetoffsetx=17cm, targetoffsety=-6.5cm, angle=90, radius=3cm,
-  width=16cm, linewidth=.2cm,
+  \note[targetoffsetx=35cm, targetoffsety=-6.5cm, angle=90, radius=3cm,
+  width=24cm, linewidth=.2cm,
   roundedcorners=20, innersep=1cm]{\large \centering $n!=\begin{cases}
       1        &\mbox{ als } n=0\\
       n \cdot (n-1)! &\mbox{ als } n>0
@@ -138,20 +138,20 @@
     \huge
     \centering
     $\bar{P}^{^{n_1,n_2,\dots,n_k}}_n = \dfrac{n!}{n_1!\cdot n_2!\cdot \ldots \cdot n_k!}$
-    \qquad \large of eleganter \qquad \Large
-    $\bar{P}_{n_1,\dots,n_k} = \dfrac{\left(\sum_{i=1}^k n_i\right)!}{\prod_{i=1}^k n_i!}$
+    \qquad \large of eleganter \qquad \huge
+    $\bar{P}^{^{n_1,n_2,\dots,n_k}}_n = \dfrac{\left(\sum_{i=1}^k n_i\right)!}{\prod_{i=1}^k n_i!}$
   }
 
   \column{0.4}
 
-  \block{Variaties}{
-    \large
-    \begin{align*}
-      V^k_n &= n \cdot (n-1) \cdot \ldots \cdot (n-k+1)\\
-            &= \dfrac{n \cdot (n-1) \cdot \ldots \cdot (n-k+1) \, \color{gray}{ \cdot \, (n-k) \cdot \ldots \cdot 1}}{\color{gray}{(n-k) \cdot (n-k-1) \cdot \ldots \cdot 1}}\\
-            &= \dfrac{n!}{(n-k)!}
-    \end{align*}
-  }
+  % \block{Variaties}{
+  %   \large
+  %   \begin{align*}
+  %     V^k_n &= n \cdot (n-1) \cdot \ldots \cdot (n-k+1)\\
+  %           &= \dfrac{n \cdot (n-1) \cdot \ldots \cdot (n-k+1) \, \color{gray}{ \cdot \, (n-k) \cdot \ldots \cdot 1}}{\color{gray}{(n-k) \cdot (n-k-1) \cdot \ldots \cdot 1}}\\
+  %           &= \dfrac{n!}{(n-k)!}
+  %   \end{align*}
+  % }
 
   \block{Driehoek van Pascal}{
     \Large

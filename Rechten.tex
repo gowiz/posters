@@ -45,7 +45,7 @@
   \column{0.75}
   \block{Grafisch}{
     \begin{center}
-      \begin{tikzpicture}[scale=2,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \begin{tikzpicture}[scale=1.8,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
         \begin{axis}[
           x=2.0cm,y=2.0cm,
           axis lines=middle,
@@ -102,22 +102,18 @@
   \begin{columns}
     \column{0.4}
     \block{Rico $m$ en één punt $(x_1,y_1)$}{
-      \LARGE
-      \begin{align*}
-        y - y_1 &= m(x - x_1)
-      \end{align*}
+      \Large
+      $$y - y_1 &= m(x - x_1) \qquad \mbox{of} \qquad \begin{vmatrix}x & y & 1 \\ x_1 & y_1 & 1 \\ 1 & m & 0\end{vmatrix} = 0$$
     }
     \block{Punten $(x_1,y_1)$ en $(x_2, y_2)$}{
-      \LARGE
-      \begin{align*}
-        y - y_1 &= \dfrac{y_2-y_1}{x_2-x_1}(x - x_1)
-      \end{align*}
+      \Large
+        $$y - y_1 &= \dfrac{y_2-y_1}{x_2-x_1}(x - x_1) \qquad \mbox{of} \qquad \begin{vmatrix}x & y & 1 \\ x_1 & y_1 & 1 \\ x_2 & y_2 & 1\end{vmatrix} = 0$$
     }
     \column{0.6}
     \block{Rechten in de ruimte}{
       \LARGE
       \begin{minipage}{.5\linewidth}
-        \innerblock{Parametervergelijking}{
+        \innerblock{\Large Stelsel parametervergelijkingen}{
           $$\begin{cases}
             x &= x_0 + ka\\
             y &= y_0 + kb\\
@@ -126,7 +122,7 @@
         }
       \end{minipage}
       \begin{minipage}{.5\linewidth}
-        \innerblock{Cartesische vergelijking}{
+        \innerblock{\Large Stelsel cartesische vergelijkingen}{
           $$\dfrac{x-x_0}{a}=\dfrac{y-y_0}{b}=\dfrac{z-z_0}{c}$$
         }
       \end{minipage}
