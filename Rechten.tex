@@ -42,29 +42,30 @@
 \maketitle
 
 \begin{columns}
-  \column{0.75}
+  \column{0.7}
   \block{Grafisch}{
+    \vspace*{3.5cm}
     \begin{center}
       \begin{tikzpicture}[scale=1.8,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
         \begin{axis}[
           x=2.0cm,y=2.0cm,
           axis lines=middle,
           xmin=-7, xmax=7, ymin=-1.5, ymax=5.5,
-          xtick={0,1}, ytick={0,1}
+          ticks=none,
           ]
           \clip(-7,-1.5) rectangle (7,5.5);
-          \draw [line width=3.6pt,domain=-7:7]
+          \draw [line width=2.6pt,domain=-7:7]
           plot(\x,{(--4--\x)/2});
           \draw [line width=2.pt,dotted] (2,3)-- (4,3);
           \draw [line width=2.pt,dotted] (4,3)-- (4,4);
-          \draw (-3.8,0) node[anchor=north] {$(-\frac{b}{m},0)$};
-          \draw (0,2.2) node[anchor=east] {$(0,b)$};
+          \draw (-3.4,0) node[anchor=north] {$(-\frac{q}{m},0)$};
+          \draw (0,2.2) node[anchor=east] {$(0,q)$};
           \draw (2.1,2.9) node[anchor=south east] {\small$(x_1,y_1)$};
           \draw (4.1,3.9) node[anchor=south east] {\small $(x_2,y_2)$};
           \draw (3,3) node[anchor=north] {$\Delta x$};
           \draw (4,3.5) node[anchor=west] {$\Delta y$};
-          \draw (2.4,3.15) node[anchor=west] {\small $\theta$};
-          \draw (-6,4) node[anchor=north west] {\LARGE $f: y=mx+b$};
+          \draw (2.5,3.2) node[anchor=west] {\small $\theta$};
+          \draw (-6,4) node[anchor=north west] {\LARGE $y=mx+q$};
           \draw [fill=black] (-4,0) circle (2.5pt);
           \draw [fill=black] (0,2) circle (2.5pt);
           \draw [fill=black] (2,3) circle (2.5pt);
@@ -77,56 +78,69 @@
         \end{axis}
       \end{tikzpicture}
     \end{center}
+    \vspace*{3.5cm}
   }
-  \column{0.25}
+  \column{0.3}
   \block{Rico}{
+    \vspace*{1cm}
     \LARGE
     \begin{align*}
       m &= \dfrac{y_2-y_1}{x_2-x_1}
     \end{align*}
+      \vspace*{1cm}
   }
   \block{Differentiequotiënt}{
+      \vspace*{1cm}
     \LARGE
     \begin{align*}
       \dfrac{\Delta y}{\Delta x}_{[x_1,x_2]} &= \dfrac{f(x_2)-f(x_1)}{x_2-x_1}
     \end{align*}
+      \vspace*{1cm}
   }
   \block{Hellingshoek $\theta$}{
+      \vspace*{1cm}
     \LARGE
     \begin{align*}
       \tan \theta &= \dfrac{\Delta y}{\Delta x}
     \end{align*}
+      \vspace*{1cm}
   }
+
 \end{columns}
 
   \begin{columns}
-    \column{0.4}
+    \column{0.5}
     \block{Rico $m$ en één punt $(x_1,y_1)$}{
-      \Large
-      $$y - y_1 &= m(x - x_1) \qquad \mbox{of} \qquad \begin{vmatrix}x & y & 1 \\ x_1 & y_1 & 1 \\ 1 & m & 0\end{vmatrix} = 0$$
-    }
-    \block{Punten $(x_1,y_1)$ en $(x_2, y_2)$}{
-      \Large
-        $$y - y_1 &= \dfrac{y_2-y_1}{x_2-x_1}(x - x_1) \qquad \mbox{of} \qquad \begin{vmatrix}x & y & 1 \\ x_1 & y_1 & 1 \\ x_2 & y_2 & 1\end{vmatrix} = 0$$
-    }
-    \column{0.6}
-    \block{Rechten in de ruimte}{
+      \vspace*{1cm}
       \LARGE
-      \begin{minipage}{.5\linewidth}
-        \innerblock{\Large Stelsel parametervergelijkingen}{
-          $$\begin{cases}
-            x &= x_0 + ka\\
-            y &= y_0 + kb\\
-            z &= z_0 + kc
-          \end{cases}$$
-        }
-      \end{minipage}
-      \begin{minipage}{.5\linewidth}
-        \innerblock{\Large Stelsel cartesische vergelijkingen}{
-          $$\dfrac{x-x_0}{a}=\dfrac{y-y_0}{b}=\dfrac{z-z_0}{c}$$
-        }
-      \end{minipage}
+      $$y - y_1 = m(x - x_1) \qquad \mbox{of} \qquad \begin{vmatrix}x & y & 1 \\ x_1 & y_1 & 1 \\ 1 & m & 0\end{vmatrix} = 0$$
+      \vspace*{1cm}
     }
+    \column{0.5}
+    \block{Punten $(x_1,y_1)$ en $(x_2, y_2)$}{
+      \vspace*{1cm}
+      \LARGE
+        $$y - y_1 = \dfrac{y_2-y_1}{x_2-x_1}(x - x_1) \qquad \mbox{of} \qquad \begin{vmatrix}x & y & 1 \\ x_1 & y_1 & 1 \\ x_2 & y_2 & 1\end{vmatrix} = 0$$
+      \vspace*{1cm}
+    }
+    % \column{0.6}
+    % \block{Rechten in de ruimte}{
+    %   \LARGE
+    %   \begin{minipage}{.5\linewidth}
+    %     \innerblock{\Large Stelsel parametervergelijkingen}{
+    %       $$\begin{cases}
+    %         x &= x_0 + ka\\
+    %         y &= y_0 + kb\\
+    %         z &= z_0 + kc
+    %       \end{cases}$$
+    %     }
+    %   \end{minipage}
+    %   \begin{minipage}{.5\linewidth}
+    %     \innerblock{\Large Stelsel cartesische vergelijkingen}{
+    %       $$\dfrac{x-x_0}{a}=\dfrac{y-y_0}{b}=\dfrac{z-z_0}{c}$$
+    %     }
+    %   \end{minipage}
+    % }
   \end{columns}
 
 \end{document}

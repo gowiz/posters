@@ -1,6 +1,7 @@
 \documentclass[a1paper,landscape,25pt]{tikzposter}
 
 \usepackage{amsmath}
+\usepackage{amsfonts}
 
 \settitle{
   \vspace{-5cm}
@@ -39,10 +40,8 @@
 \begin{columns}
   \column{0.5}
 
-  \begin{subcolumns}
-    \subcolumn{0.5}
     \block{Definitie machten}{
-      \Large
+      \LARGE
       \begin{align*}
         a^n &= a\cdot a \cdot a \ldots \cdot a\\
         a^1 &= a \qquad
@@ -54,34 +53,22 @@
       \Large
       $$a^{-n} = \dfrac{1}{a^n}$$
     }
-  \end{subcolumns}
 
   \block{Rekenregels machten}{
     \LARGE
     \begin{align*}
-      a^m\cdot a^n &= a^{m+n} && \mbox{\normalsize machten met zelfde grondtal vermenigvuldigen}\\
-      \dfrac{a^m}{a^n} &= a^{m-n} && \mbox{\normalsize machten met zelfde grondtal delen}\\
-      \left(a^m\right)^{^n} &= a^{m\cdot n} && \mbox{\normalsize macht van een macht}\\
-      \left(ab\right)^m &= a^mb^m && \mbox{\normalsize macht van een product}\\
-      \left(\dfrac{a}{b}\right)^m &= \dfrac{a^m}{b^m} && \mbox{\normalsize macht van een quotiënt}
+      a^m\cdot a^n &= a^{m+n} \\%&& \mbox{\Large machten met zelfde grondtal vermenigvuldigen}\\
+      \dfrac{a^m}{a^n} &= a^{m-n} \\%&& \mbox{\normalsize machten met zelfde grondtal delen}\\
+      \left(a^m\right)^{^n} &= a^{m\cdot n} \\%&& \mbox{\normalsize macht van een macht}\\
+      \left(ab\right)^m &= a^mb^m \\%&& \mbox{\normalsize macht van een product}\\
+      \left(\dfrac{a}{b}\right)^m &= \dfrac{a^m}{b^m} %&& \mbox{\normalsize macht van een quotiënt}
     \end{align*}
   }
-  \note[targetoffsetx=17cm, targetoffsety=-3cm, width=11cm]{
-    \LARGE\centering
-    $a^{n/m} = \sqrt[m]{a^n}$
-  }
-  \block{Definitie vierkantswortel \hfill $\pm\sqrt{a}$}{
-    \begin{center}
-      \Large
-      $x$ is een {\bf vierkantswortel} uit $a$ $\Leftrightarrow$ $x^2=a$\\
-    \end{center}
-  }
 
-  \block{Definitie machtswortel \hfill $\pm\sqrt[n]{a}$}{
-    \begin{center}
-      \Large
-      $x$ is een {\bf n-de machtswortel} uit $a$ $$\Updownarrow$$ $$x^n=a$$
-    \end{center}
+  \block{Rationale exponent}{
+    \LARGE
+    \centering
+    $a^{n/m} = \sqrt[m]{a^n}$
   }
 
   \column{0.5}
@@ -93,7 +80,8 @@
       $a\in\mathbb{R}^+, b\in\mathbb{R}^+_0$
     }
     \block{Rekenregels vierkantswortels}{
-      \vspace{-1cm}
+      \vspace{0.4cm}
+      \LARGE
       \begin{align*}
         \sqrt{ab} &= \sqrt{a}\sqrt{b}\\
         \sqrt{\dfrac{a}{b}} &= \dfrac{\sqrt{a}}{\sqrt{b}}\\
@@ -103,16 +91,20 @@
 
     \block{}{
       \vspace{-2cm}
+      \LARGE
       $$\sqrt{a^2} = |a|$$
     }
 
     \block{}{
       \vspace{-2cm}
+      \LARGE
       $$\sqrt{a} = \sqrt[2]{a}$$
     }
 
     \subcolumn{0.5}
     \block{Rekenregels machtswortels}{
+      \LARGE
+      \vspace{0.5cm}
       \begin{align*}
         \sqrt[n]{ab} &= \sqrt[n]{a}\sqrt[n]{b}\\
         \sqrt[n]{\dfrac{a}{b}} &= \dfrac{\sqrt[n]{a}}{\sqrt[n]{b}}\\
@@ -124,45 +116,22 @@
     }
   \end{subcolumns}
 
-  \block{Lijst met gehele machten}{
-    \Large
+  \block{Definitie vierkantswortel \hfill $\pm\sqrt{a}$}{
+    \vspace{0.5cm}
     \begin{center}
-      \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
-        \hline
-        $a^n$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$\\
-        \hline
-        2     & 4   & 8   & 16  & 32  & 64  & 128 & 256 & 512 & 1024\\
-        \cline{1-10}
-        3     & 9   & 27  & 81  & 243 & 729\\
-        \cline{1-6}
-        4     & 16  & 64  & 256 & 1024\\
-        \cline{1-5}
-        5     & 25  & 125 & 625\\
-        \cline{1-4}
-        6     & 36  & 216\\
-        \cline{1-3}
-        7     & 49  & 343\\
-        \cline{1-3}
-        8     & 64  & 512\\
-        \cline{1-3}
-        9     & 81  & 729\\
-        \cline{1-6}
-        10    & 100  & 1\,000 & $10^4$ & $10^5$ & $10^6$\\
-        \cline{1-6}
-        11    & 121\\
-        \cline{1-2}
-        12    & 144\\
-        \cline{1-2}
-        13    & 169\\
-        \cline{1-2}
-        14    & 196\\
-        \cline{1-2}
-        15    & 225\\
-        \cline{1-2}
-      \end{tabular}
+      \LARGE
+      $x$ is een {\bf vierkantswortel} uit $a$ $\Leftrightarrow$ $x^2=a$\\[0.7cm]
     \end{center}
-
   }
+
+  \block{Definitie machtswortel \hfill $\pm\sqrt[n]{a}$}{
+    \vspace{0.5cm}
+    \begin{center}
+      \LARGE
+      $x$ is een {\bf n-de machtswortel} uit $a$ $$\Updownarrow$$ $$x^n=a$$\\[0.7cm]
+    \end{center}
+  }
+
 \end{columns}
 
 \end{document}

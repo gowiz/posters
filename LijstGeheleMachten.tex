@@ -1,0 +1,93 @@
+\documentclass[a2paper,landscape,25pt]{tikzposter}
+
+\usepackage{amsmath}
+\usepackage{color, colortbl}
+
+\settitle{
+  \vspace{-5cm}
+  \centering \vbox{
+\@titlegraphic \\[\TP@titlegraphictotitledistance] \centering
+\color{titlefgcolor} {\bfseries \fontsize{90}{100} \sc \@title \par}
+\vspace{0em}
+}}
+
+\title{Lijst met gehele machten}
+
+\addtolength{\jot}{1em}
+
+\usetheme{Basic}
+\usecolorstyle[colorPalette=GreenGrayViolet]{Spain}
+
+\tikzposterlatexaffectionproofoff
+
+\renewcommand{\arraystretch}{1.1}
+
+\definecolor{Gray}{gray}{0.9}
+\definecolor{LightGray}{gray}{0.999}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{columns}
+
+  \column{1}
+  
+  \block{}{
+    \LARGE
+    \begin{center}
+      \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \rowcolor{Gray}
+        $a^n$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$\\
+        \hline
+        \rowcolor{LightGray}
+        2     & 4   & 8   & 16  & 32  & 64  & 128 & 256 & 512 & 1024\\
+        \cline{1-10}
+        \rowcolor{Gray}
+        3     & 9   & 27  & 81  & 243 & 729\\
+        \cline{1-6}
+        \rowcolor{LightGray}
+        4     & 16  & 64  & 256 & 1024\\
+        \cline{1-5}
+        \rowcolor{Gray}
+        5     & 25  & 125 & 625\\
+        \cline{1-4}
+        \rowcolor{LightGray}
+        6     & 36  & 216\\
+        \cline{1-3}
+        \rowcolor{Gray}
+        7     & 49  & 343\\
+        \cline{1-3}
+        \rowcolor{LightGray}
+        8     & 64  & 512\\
+        \cline{1-3}
+        \rowcolor{Gray}
+        9     & 81  & 729\\
+        \cline{1-6}
+        \rowcolor{LightGray}
+        10    & 100  & 1\,000 & $10^4$ & $10^5$ & $10^6$\\
+        \cline{1-6}
+        \rowcolor{Gray}
+        11    & 121\\
+        \cline{1-2}
+        \rowcolor{LightGray}
+        12    & 144\\
+        \cline{1-2}
+        \rowcolor{Gray}
+        13    & 169\\
+        \cline{1-2}
+        \rowcolor{LightGray}
+        14    & 196\\
+        \cline{1-2}
+        \rowcolor{Gray}
+        15    & 225\\
+        \cline{1-2}
+      \end{tabular}
+    \end{center}
+
+  }
+\end{columns}
+
+\end{document}
