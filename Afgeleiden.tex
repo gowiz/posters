@@ -84,6 +84,8 @@
   \block{Tabel met veelgebruikte afgeleiden}{
     \LARGE
     \begin{align*}
+      (\sqrt{x})' &= \frac{1}{2\sqrt{x}}\ (x>0) &
+      \left(\frac{1}{x}\right)' &= -\frac{1}{x^2}\ (x \neq 0)\\
       (e^x)' &= e^x &
       (a^x)' &= a^x\ln(a) \ (a>0,\ a\neq 1)\\
       (\ln x)' &= \frac{1}{x}\ (x>0) &
@@ -92,8 +94,6 @@
       (\cos x)' &= -\sin x\\
       (\tan x)' &= \frac{1}{\cos^2 x} &
       (\cot x)' &= -\frac{1}{\sin^2 x}\\
-      (\sqrt{x})' &= \frac{1}{2\sqrt{x}}\ (x>0) &
-      \left(\frac{1}{x}\right)' &= -\frac{1}{x^2}\ (x \neq 0)\\
       (\arcsin x)' &= \frac{1}{\sqrt{1-x^2}} &
       (\arccos x)' &= -\frac{1}{\sqrt{1-x^2}}\\
       (\arctan x)' &= \frac{1}{1+x^2} &
@@ -137,7 +137,7 @@
 
         % Assen
         \draw[->, line width=1.5pt] (-0.2,0) -- (3.5,0) node[right] {$x$};
-        \draw[->, line width=1.5pt] (0,-0.2) -- (0,2.1) node[above] {$y$};
+        \draw[->, line width=1.5pt] (0,-0.2) -- (0,2.0) node[above] {$y$};
 
         % De grafiek (blauw)
         \draw[line width=2.5pt, color=blue, samples=100, domain=0.2:3.2] plot (\x, {\fA*\x*\x + \fB});
