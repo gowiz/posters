@@ -10,3 +10,4 @@ auto
 *.toc
 *.fdb_latexmk
 *.fls
+.hidden
