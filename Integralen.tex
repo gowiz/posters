@@ -167,10 +167,10 @@
       \node[below] at (\b,0) {\Large $b$};
 
       % Delta x pijl onderaan
-      \pgfmathsetmacro{\xLdx}{\a+3*\dx}
-      \pgfmathsetmacro{\xRdx}{\a+4*\dx}
+      \pgfmathsetmacro{\xLdx}{\a+2*\dx}
+      \pgfmathsetmacro{\xRdx}{\a+3*\dx}
       \draw[<->, line width=1pt] (\xLdx,-0.18) -- (\xRdx,-0.18)
-        node[midway, below, inner sep=2pt] {\Large $\Delta x$};
+        node[midway, below, inner sep=2pt] {\small $\Delta x$};
 
       % Formule van de Riemannsom
       \node[anchor=west] at (2.5,2.3) {\Large
